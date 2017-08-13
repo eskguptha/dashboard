@@ -1,0 +1,245 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900,700,300,100);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
+body{font-size:12.2pt;color:#000;font-family:"Lato",sans-serif;line-height:23px;}
+.navbar-inverse {
+    background: #000;
+}.navbar-inverse {
+	background-color: #fff;
+	border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+
+
+}
+.navbar{margin-bottom: 0px;}
+.navbar-nav>li{margin-right: 10px;}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-nav>li>a {
+
+font-size: 12pt;
+font-weight: bold;
+color: #08225f;
+
+
+}
+.navbar {
+    min-height: 30px!important
+}
+.logo a{font-size: 25px;color: #3e983c;font-weight: bold;text-decoration: none;}
+.logo a small{color: #888;font-size: 12px;}
+.journal_header_nav .nav > li > a{padding: 0px;margin-right: 30px;line-height: 35px;}
+.search-form{margin-top: 10px;}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color:#3e983c;
+}
+.navbar-toggle{background-color: #23527c;}
+.header-contact-info{color: #333;padding-top: 10px;margin-right:10px;font-size: 14px;}
+.navbar-fixed-top{background-color: #fff;}
+.home_myCarousel{margin-top: 140px;}
+h1{font-size: 18px;color:#3e983c;font-weight: bold; }
+
+.copyright-section {
+    background: #282a2b;
+    line-height: 45px;
+    color: #ccc;
+}
+.contact-form{background-color: #fff;padding: 15px;border:1px #eee solid;margin-bottom: 15px;}
+.home-ul {padding-left: 0px;}
+.home-ul li .fa-check-square-o{color: #08225f;}
+
+.footer {background: #363839;font-size: 11pt;}
+.footer{}
+
+
+.footer h3{font-size: 20px;color: #3e983c;font-weight: bold;}
+.footer-links{list-style: none;line-height: 30px;margin-top: 10px;}
+.footer-links li a{color: #ccc;}
+.footer-news ul{list-style: none;}
+.footer-news{color: #ccc;}
+.footer-news p{font-size: 11pt;}
+.footer .cont-text{color: #ccc;margin-left: 30px;}
+.home-3-thumbs img{width:100%;height: 200px}
+.journal-header-bg{ margin-top: 140px; height: 100px;background-color: #1558a5;
+
+    border-top: 1px solid #EBF4FC;padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px; linear-gradient(#000, #000) repeat scroll 0 0;}
+.page-content{margin-top: 145px;}
+.journal-header h1{height: 30px;line-height: 30px;font-size: 30px;font-weight: bold;color: #fafafa;margin-top: 5px;}
+.journal-description .headding-2{height: 30px;font-size: 18px;font-weight: bold;color: #08225f;border-bottom: 1px #eee solid;margin-bottom: 15px;}
+.btn-full{width: 100%;margin-bottom: 5px;}
+.text .part1{float: left;width: 390px;line-height: 30px;}
+.static-content{margin-top: 150px;}
+.journal-header .email{color:#f3f3f3;font-size: 14px;}
+.journal-list { margin-top:5px;border:1px #f1f1f1 solid;padding: 15px;margin-bottom: 15px;}
+.journal-list .title{height: 30px;font-size: 18px;font-weight: bold;color: #08225f;}
+.journal-list:hover{background-color: #fafafa}
+.journal-list .submit_paper{color: #333;font-size: 14px;}
+.journal-list .btn-full{font-size: 13px;font-weight: bold;min-width: 140px;border-radius: 0px;}
+
+.breadcrumb{background:none;padding: 0px;}
+.breadcrumb .breadcrumb-item a{color: #f9f9f9;}
+.breadcrumb .active {color: #eee;}
+
+.submit_paper_to{color:#fff;font-size: 13px;padding-top: 25px;}
+.submit_paper_to a{font-weight: bold;}
+
+
+
+.journal-left-area .list-group{margin-bottom: 0px;font-size: 26px;text-transform: uppercase;color: #08225f;border-bottom:1px #ccc solid;border-radius:0px;}
+.journal-left-area .list-group strong{text-transform: uppercase;}
+.journal-left-area .list-group-item{border:none;padding-left: 45px;font-size:15px;background-color: #eee;text-transform: none;color: #08225f;border-radius:0px;}
+.journal-left-area .inner-item{padding-left: 45px;color: #333;}
+.journal-left-area .list-group-item:hover{color:#000;background-color: none;}
+.journal-left-area .btn-sm{border-radius: 0px;font-size: 16px;}
+
+.inner-static-content{margin-top: 145px;}
+h2{font-size:18px;font-weight:bold;}
+.journal-description .journal-rightbar h2{font-size: 18px;color: #08225f;font-weight: bold;}
+.journal-description .journal-rightbar h2{font-size: 18px;color: #08225f;font-weight: bold;}
+.journal-description .journal-rightbar h3{font-size: 16px;color: #08225f;font-weight: bold;}
+.journal-description .journal-rightbar h4{font-size: 14px;color: #08225f;font-weight: bold;}
+
+.inner-static-content h3{font-size: 18px;font-weight: bold;}
+.inner-static-content h4{font-size: 16px;font-weight: bold;}
+.inner-static-content h5{font-size: 14px;font-family: bold;}
+
+.inner-static-content{min-height: 500px;}
+
+.journal_header_nav{margin-bottom: 25px;background-color: #d5e0f2;}
+.b15{margin-bottom: 10px;}
+.journal-innner-page-buttons a{color: #08225f;font-weight: bold;}
+.journal-innner-page-buttons a:hover{color: #3e983c;text-decoration: none;}
+.home-journal-list{min-height: 270px;}
+.home-journal-list { margin-top:5px;border:1px #f1f1f1 solid;padding: 15px;margin-bottom: 15px;}
+.home-journal-list .title{height: 30px;font-size: 18px;font-weight: bold;color: #08225f;}
+.home-journal-list:hover{background-color: #fafafa}
+.home-journal-list .submit_paper{color: #333;font-size: 14px;}
+.home-journal-list .btn-warning{font-size: 12px;font-weight: bold;width:100%;border-radius: 0px;}
+.home-journal-list .btn-danger{font-size: 12px;font-weight: bold;width:100%;border-radius: 0px;}
+.journal-list .btn-primary,.home-journal-list .btn-primary{width: 100%;border-radius: 0px;}
+.journal-list .btn-success,.journal-list .btn-warning,.journal-list .btn-danger, .home-journal-list .btn-success{width: 100%;border-radius: 0px;}
+
+
+.btn-primary{background-color: #08225f;border:1px #08225f solid;}
+.follow-us h3{padding-left: 0px;}
+.follow-us .fa{font-size: 30px;margin-right: 8px;}
+.follow-us .fa:hover{background-color:#08225f; };
+
+
+.editorial-info{margin-bottom: 10px;}
+.editorial-board-data .editorial-info .ename{font-weight: bold;font-size: 15px;color: #3e983c;}
+.editorial-board-data .editorial-info .edesc{font-size: 14px;margin-bottom: 10px;}
+
+
+
+
+
+h5 {
+    line-height: 10px
+}
+
+a {
+    color: #2475aa;
+}
+a:hover {
+    color: #c84545;
+}
+svg {
+    width: 100%;
+}
+.tr-hover:hover{color: #2475aa;}
+table.dataTable tr.even:hover,table.dataTable tr.odd:hover {
+    background-color:#fff;
+}
+
+.sparkline-box {
+    margin-top: 0;
+}
+.area-top form#dates_form {
+    padding-top: 10px;
+}
+
+
+svg.xchart g.scale g.axis.axisX, svg.xchart g.scale g.axis.axisY {
+    display: none;
+}
+
+div.custom-tip {
+    position: absolute;
+    max-width: 250px;
+    padding: 4px;
+    background: rgba(51,51,51,0.9);
+    border-radius: 4px;
+    color: #fff;
+    pointer-events: none;
+}
+.line .fill { pointer-events: none; }  
+
+.action-nav-normal .action-nav-button a {
+    cursor: default;    
+}
+.domain{display: none;}
+.errorlist {list-style: none;}
+.errorlist li{color: #f00;}
+
+@media screen and (min-width: 921px) {
+    .modal-dialog {
+      width: 800px; /* New width for default modal */
+    }
+    .modal-sm {
+      width: 350px; /* New width for small modal */
+    }
+}
+
+
+div.chart {
+    height: 200px;
+    width: 100%;
+}
+div.chart svg {
+    height: 100%;
+    width: 100%;
+}
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+
+.link:hover {
+  stroke-opacity: .5;
+}
+ div.custom-tip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  background: rgba(51,51,51,0.9);
+  border-radius: 4px;
+  color: #fff;
+  pointer-events: none;
+}
+div.widget-sankey {
+    font-size: 10px;
+    height: auto;
+    margin-bottom: 20px;
+
+}
+div.widget-sankey h4 {
+    margin: 0px;
+    padding: 2px;
+}

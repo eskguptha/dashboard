@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>News Online CMS</title>
+     {% endblock %}
+{% block banners %}
+<div id="myCarousel_1" class="carousel slide home_myCarousel" data-ride="carousel">
+        <ol class="carousel-indicators">
+        {% for each in banner_list %}
+            <li data-target="#myCarousel_1" data-slide-to="{{forloop.counter}}" class='{% if forloop.counter == 1 %}active{%endif%}'></li>
+            {%endfor%}
+            
+        </ol>
+        <div class="carousel-inner">
+        {% for each in banner_list %}
+            <div class="item {% if forloop.counter == 1 %}active{%endif%}">
+                <a href=""><img src="/media/{{each.image}}" alt="" title="" width="100%" /></a>
+            </div>
+            {%endfor%}
+        </div>
+        <a class="left carousel-control" href="#myCarousel_1" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel_1" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    {% endblock %}
+    {% block body %}
+    <div class="col-md-12"><h2>Latest Articles</h2></div>
+    {% for each in post_list %}    
+   <div class="col-md-6">
+    <div class="home-journal-list">
+        <div class="row">
+    <div class="col-md-4">
+       <p class="text-center"><a href="{% url 'post_detail'  each.category.slug each.slug %}"><img src="/media/{{each.image}}"  class="img-responsive"  alt="" title="" onError="this.onerror=null;this.src='{{STATIC_URL}}images/no-image.jpg'"/></a></p>
+    </div>
+    <div class="col-md-8">
+        <p><a class="title" title="" href="{% url 'post_detail' each.category.slug each.slug %}">{{each.name | slice:'30'}}</a></p>
+        <p ><span class="text-left badge">{{each.category.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><small>{{each.updated_at}}</small></span></p>
+        <p class="text-justify">{{each.description | removetags:'a span p div h1 h2 b strong o o:p' | slice:'50' }}</p>
+        <div class="row">
+            <div class="col-md-6 "><p class="text-right"><a href="{% url 'post_detail' each.category.slug each.slug %}" class="btn btn-success" >Read More..</a></p></div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    {%endfor%}
+{% endblock %}

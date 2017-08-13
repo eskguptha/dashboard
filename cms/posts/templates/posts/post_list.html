@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>News Online CMS | {{category_obj.name}}</title>
+     {% endblock %}
+{% block body %}
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+<div class="col-md-12"><h2>{{category_obj.name}} Articles</h2></div>
+{% if post_list %}
+    {% for each in post_list %}    
+   <div class="col-md-6">
+    <div class="home-journal-list">
+        <div class="row">
+    <div class="col-md-4">
+        <p class="text-center"><a href="{% url 'post_detail' each.category.slug each.slug %}"><img src="/media/{{each.image}}"  class="img-responsive"  alt="" title="" onError="this.onerror=null;this.src='{{STATIC_URL}}images/no-image.jpg'"/></a></p>
+    </div>
+    <div class="col-md-8">
+        <p><a class="title" title="" href="{% url 'post_detail' each.category.slug each.slug %}">{{each.name | slice:'30'}}</a></p>
+        <p ><span class="text-left badge">{{each.category.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><small>{{each.updated_at}}</small></span></p>
+        <p class="text-justify">{{each.description | slice:'50'}}</p>
+        <div class="row">
+            <div class="col-md-6 "><p class="text-right"><a href="{% url 'post_detail' each.category.slug each.slug %}" class="btn btn-success" >Read More..</a></p></div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    {%endfor%}
+    {%else%}
+    <p><h1>No Articles Found</h1></p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,282 @@
+{% extends "catalog_base.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+      <div class="area-top clearfix">
+        <div class="pull-left">
+          <h5><i class="icon-dashboard"></i> Dashboard</h5>
+        </div>
+        <ul class="list-inline pull-right sparkline-box">
+          
+          <li>
+            <form id="dates_form" method="post" action=".">{% csrf_token %}
+                <div id="dates" class="text-danger">
+                    <i class="icon-calendar"></i>
+                <span>{{dates}}</span> <b class="caret"></b>
+                </div>
+                <input type="hidden" name="dates" id="dates_field"/>
+                <hr class="visible-sm visible-xs"/>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="action-nav-normal">
+      <div class="dashboard-stats">
+      <div class="col-sm-2 action-nav-button">
+          <a href="#" title="">
+            <span class="count">{{total}}</span>
+            <span>Total Revenue</span>
+          </a>
+          <span class="triangle-button green"><i class="icon-money"></i></span>
+        </div>
+      {% for k, v in stats_values.items %}
+      {% if forloop.counter < 6 %}
+        <div class="col-sm-2 action-nav-button">
+          <a href="#" title="">
+            <span class="count">{{v.0}}</span>
+            <span>{{k}}</span>
+          </a>
+          <span class="triangle-button {{v.1}}"><i class="icon-money"></i></span>
+        </div>
+        {%endif%}
+        {%endfor%}
+        </div>
+        
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+        <div class="box">
+          <div class="box-header">
+            <span class="title">
+              <i class=" icon-bar-chart"></i> Sales Activity <small>timeline</small>
+            </span>
+            <ul class="box-toolbar">
+              <li class="toolbar-link">
+                <a href="" alt="Report" title="View Data"><i class="icon-table"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="box-content padded">
+              <div class="sine-chart" id="xchart-sales"></div>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="box">
+          <div class="box-header">
+            <span class="title">
+                <i class="icon-adjust"></i> Campaign Type <small>Impressions</small>
+            </span>
+            <ul class="box-toolbar">
+              <li class="toolbar-link">
+                <a href="" alt="Report" title="View Data"><i class="icon-table"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="box-content padded " style="margin:6px;">
+              <div id="recom-pie"></div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+            <div class="box">
+                <div class="box-header">
+                  <span class="title">
+                      <i class=" icon-globe"></i>
+                      City wise Sales <small>(Top 10)</small>
+                  </span>
+                  <ul class="box-toolbar">
+                    <li class="toolbar-link">
+                      <a href="" alt="Report" title="View Data"><i class="icon-table"></i></a>
+                    </li>
+                  </ul>
+               </div>
+                <div class="box-content">
+                    <div id="barchart_loc"></div>
+                    
+                </div> 
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+       
+            <div class="box">
+                <div class="box-header">
+                  <span class="title">
+                      <i class=" icon-tags"></i>
+                      Product Wise Sales <small>(Top 10)</small>
+                  </span>
+                  <ul class="box-toolbar">
+                    <li class="toolbar-link">
+                      <a href="" alt="Report" title="View Data"><i class="icon-table"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="box-content">
+                    <div id="barchart_product"></div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+      <div class="box">
+          <div class="box-header">
+            <span class="title">
+                <i class="icon-group"></i> Vendor <small>Sales</small>
+            </span>
+            <ul class="box-toolbar">
+              <li class="toolbar-link">
+                <a href="" alt="Report" title="View Data"><i class="icon-table"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="box-content padded " style="margin:6px;">
+              <div id="vendor_pie"></div>
+          </div>
+      </div>
+    </div>
+     <div class="col-md-4">
+      <div class="box">
+          <div class="box-header">
+            <span class="title">
+                <i class="icon-desktop"></i> Platform <small>Sales</small>
+            </span>
+            <ul class="box-toolbar">
+              <li class="toolbar-link">
+                <a href="" alt="Report" title="View Data"><i class="icon-table"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="box-content padded " style="margin:6px;">
+              <div id="platform_pie"></div>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="box">
+          <div class="box-header">
+            <span class="title">
+                <i class="icon-desktop"></i> Browser <small>Sales</small>
+            </span>
+            <ul class="box-toolbar">
+              <li class="toolbar-link">
+                <a href="" alt="Report" title="View Data"><i class="icon-table"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="box-content padded " style="margin:6px;">
+              <div id="browser_pie"></div>
+          </div>
+      </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+{% block extrajs %}
+<script type="text/javascript" src="{{STATIC_URL}}js/moment.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/daterangepicker.js"> </script>
+<script src="{{STATIC_URL}}js/d3lib/topojson.v0.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/d3lib/donut.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/d3lib/sankey.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/d3lib/barchart.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('#dates').daterangepicker(
+        {
+            ranges: {
+             'Today': [moment(), moment()],
+             'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+             'Last 7 Days': [moment().subtract('days', 6), moment()],
+             'Last 30 Days': [moment().subtract('days', 29), moment()],
+             'This Month': [moment().startOf('month'), moment().endOf('month')],
+             'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+            },
+            startDate: moment("{{start}}"),
+            endDate: moment("{{end}}")
+        },
+        function(start, end) {
+            date_str = start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD');
+            $('#dates span').html(date_str);
+            $('#dates_field').val(date_str);
+            $('#dates_form').submit();
+        }
+    );
+});
+</script>
+
+
+<script type="text/javascript">
+    
+var line_tooltip_div = document.createElement('div'),
+  leftOffset = -(~~$('html').css('padding-left').replace('px', '')
+            + ~~$('body').css('margin-left').replace('px', '')),
+  topOffset = -32;
+line_tooltip_div.className = 'custom-tip';
+document.body.appendChild(line_tooltip_div);
+var line_data = {
+  "xScale": "ordinal",
+  "yScale": "ordinal",
+  "main": [
+    {
+      "className": ".main.l2",
+      "data": {{sales_line_data|safe}}
+    }
+  ]
+};
+
+var opts = {
+  "dataFormatX": function (x) { return d3.time.format('%Y-%m-%d').parse(x); },
+  "tickFormatX": function (x) { return d3.time.format('%A')(x); },
+  "mouseover": function (d, i) {
+    var pos = $(this).offset();
+    if(!d.name) d.name="";
+    $(line_tooltip_div).html((d.name) +'<br/>'+ d3.time.format('%Y-%m-%d')(d.x) + ': ' + d.y)
+      .css({top: topOffset + pos.top, left: pos.left + leftOffset})
+      .show();
+  },
+  "mouseout": function (x) {
+    $(line_tooltip_div).hide();
+  },
+  "axisPaddingBottom": 0,
+  "paddingBottom": 0
+};
+var myChart = new xChart('line-dotted', line_data, '#xchart-sales', opts);
+
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    {% if pie_data  %}
+    init_donut_plot("recom-pie", {{pie_data|safe}}, {'legend': true});
+    
+{%endif%}
+ init_barchart_plot("#barchart_loc", {{loc_bar_data|safe}});
+ init_barchart_plot("#barchart_product", {{product_bar_data|safe}});
+
+});
+    init_donut_plot("vendor_pie", {{vendor_pie_data|safe}}, {'legend': true});
+    init_donut_plot("platform_pie", {{platform_pie_data|safe}}, {'legend': true});
+
+init_donut_plot("browser_pie", {{browser_pie_data|safe}}, {'legend': true});</script>
+
+
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/daterangepicker-bs3.css" type="text/css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/selectize.bootstrap3.min.css" type="text/css">
+{% endblock %}

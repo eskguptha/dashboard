@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>News Online CMS | {{post_obj.name}}</title>
+     {% endblock %}
+{% block body %}
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+<div class="row">
+<div class="col-md-8">
+    <img   src="/media/{{post_obj.image}}" class="img-responsive"  alt="" title="" onError="this.onerror=null;this.src='{{STATIC_URL}}images/no-image.jpg'"/>
+    <div>
+    <h2>{{post_obj.name}}</h2>
+    <p>
+    <span class="badge">{{post_obj.category.name}}</span>
+    <span>{{post_obj.updated_at}}</span>
+</p>
+        {{post_obj.description |safe}}
+    </div>
+
+</div>
+
+<div class="col-md-4">
+<div>
+	<a class="list-group-item active" href="">Related Articles</a>
+      {% for each in post_list %}              
+     	
+      <a class="list-group-item " title="" href="{% url 'post_detail' each.category.slug each.slug %}">
+      <table><tr><td width="60"><img src="/media/{{each.image}}"  class="img-circle"  width="55" alt="" title="" onError="this.onerror=null;this.src='{{STATIC_URL}}images/no-image.jpg'" /></td><td><strong>{{each.name | slice:'30'}}</strong>
+      <br/><small>{{each.updated_at}}</small>
+      </td>
+
+      </tr></table></a>
+      {%endfor%}
+              </div>
+
+
+</div>
+</div>
+    <p>&nbsp;</p>
+{% endblock %}

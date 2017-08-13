@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
+    {% block title %}
+    <title>Data Visualization</title>
+     {% endblock %}
+    <link rel='shortcut icon' href='{{STATIC_URL}}img/favicon.png' />
+    <link href="{{STATIC_URL}}css/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{STATIC_URL}}css/rm-style.css" media="screen" rel="stylesheet" type="text/css" />
+   
+    <script src="{{STATIC_URL}}js/application.js" type="text/javascript"></script>
+    {% block extracss %}
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-header">
+            <a class="logo navbar-brand" href="">
+                    <img src="{{STATIC_URL}}/img/big_basket_logo.jpg" alt= "{{SITE_NAME}}" class="img-responsive" width="75%" />
+            </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-top">
+                <span class="sr-only">Toggle Top Navigation</span>
+                <i class="icon-align-justify"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-collapse-top">
+            <div class="navbar-right">
+                
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            {% if messages %}          
+            <div class="top-right" id="gritter-notice-wrapper"><div id="gritter-item-1" class="gritter-item-wrapper success" ><div class="gritter-item"><div  class="gritter-close"></div><div class="gritter-without-image"><span class="gritter-title"><i class="icon-info-sign"></i> {% for message in messages %}{{ message }}{% endfor %}</span></div><div style="clear:both"></div></div></div></div>
+            {% endif %}
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+    {% block extrajs %}
+    {% endblock %}
+</body>
+</html>
