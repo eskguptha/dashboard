@@ -5,7 +5,6 @@ virtualenv cms_env
 source cms_env/bin/activate
 mkdir cms
 sudo apt install unzip
-scp -i ~/.ssh/s1143667.pem /home/santhosh/cms/cms.zip ubuntu@ec2-52-15-129-210.us-east-2.compute.amazonaws.com:~/cms/cms.zip
 # mysql
 sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty universe'
 sudo apt-get update
@@ -23,6 +22,5 @@ python manage.py createsuperuser
 root
 root@root.com
 password123
-ec2-52-15-129-210.us-east-2.compute.amazonaws.com
 
 nohup python manage.py runserver 0.0.0.0:8001 &
